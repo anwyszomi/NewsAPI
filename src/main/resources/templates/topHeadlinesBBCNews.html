@@ -10,22 +10,24 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Url</th>
+        <th scope="col">Article</th>
         <th scope="col">Add to pocket</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="n:${news}">
-        <td th:text="${n.title}"></td>
-        <td th:text="${n.url}"></td>
         <td>
-            <a th:href="@{/addToPocket?article={article}(article=${n.title})}"
+        <a th:href="@{${n.url}}" th:text="${n.title}">
+            <i class="fa fa-info"></i></a>
+        </td>
+        <td>
+            <a th:href="@{/addToPocket?article={article}(article=${n.id})}"
                role="button" class="btn btn-danger">
                 <i class="fa fa-info"></i>
             </a>
         </td>
     </tr>
+
     </tbody>
 </table>
 </section>

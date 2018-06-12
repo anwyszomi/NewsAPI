@@ -1,6 +1,8 @@
 package anwyszomi.domain;
 
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,8 +14,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //    @Length(min = 1, message = "Login cannot be empty")
-//    @Column(unique = true)
+    @Length(min = 1, message = "Login cannot be empty")
+    @Column(unique = true)
     private String login;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

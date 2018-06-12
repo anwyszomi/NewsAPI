@@ -20,10 +20,10 @@ public class BBCNewsFEController {
     @Autowired
     PocketServiceImpl pocketService;
 
-    @RequestMapping("/start")
-    public String start() {
-        return "start";
-    }
+//    @RequestMapping("/start")
+//    public String start() {
+//        return "start";
+//    }
 
     @GetMapping("/findTopBBCNews")
     public String showTopHeadlinesFromBBCNews(Model model){
