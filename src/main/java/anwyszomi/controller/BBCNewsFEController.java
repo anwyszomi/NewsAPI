@@ -28,7 +28,7 @@ public class BBCNewsFEController {
     @GetMapping("/findTopBBCNews")
     public String showTopHeadlinesFromBBCNews(Model model){
         model.addAttribute("news", topHeadlinesService.findAll().getArticles());
-        model.addAttribute("all", "active");
+//        model.addAttribute("all", "active");
         return "topHeadlinesBBCNews";
     }
 }
